@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Layout, Menu, theme } from 'antd';
-import { ProductOutlined, TagsOutlined } from '@ant-design/icons';
+import { ProductOutlined, TagsOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import ProductTable from './components/ProductTable';
 import CategoryTable from './components/CategoryTable';
+import LocationTable from './components/LocationTable';
 import './App.css'
 
 const { Header, Content, Sider } = Layout;
@@ -26,6 +27,11 @@ const AppContent: React.FC = () => {
       key: '/categories',
       icon: <TagsOutlined />,
       label: 'Categories',
+    },
+    {
+      key: '/locations',
+      icon: <EnvironmentOutlined />,
+      label: 'Locations',
     },
   ];
 
@@ -77,6 +83,7 @@ const AppContent: React.FC = () => {
               <Route path="/" element={<ProductTable />} />
               <Route path="/products" element={<ProductTable />} />
               <Route path="/categories" element={<CategoryTable />} />
+              <Route path="/locations" element={<LocationTable />} />
             </Routes>
           </div>
         </Content>
