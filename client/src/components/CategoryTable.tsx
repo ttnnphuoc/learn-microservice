@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Typography, message, Card } from 'antd';
+import { Table, Typography, message, Card, Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import type { Category } from '../types/Category';
 import { categoryService } from '../services/categoryService';
@@ -27,6 +28,10 @@ const CategoryTable: React.FC = () => {
     }
   };
 
+  const handleAddCategory = () => {
+    message.info('Add Category functionality coming soon!');
+  };
+
   const columns: ColumnsType<Category> = [
     {
       title: 'Name',
@@ -52,7 +57,16 @@ const CategoryTable: React.FC = () => {
 
   return (
     <Card>
-      <Title level={2}>Categories</Title>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <Title level={2} style={{ margin: 0 }}>Categories</Title>
+        <Button 
+          type="primary" 
+          icon={<PlusOutlined />} 
+          onClick={handleAddCategory}
+        >
+          Add Category
+        </Button>
+      </div>
       <Table
         columns={columns}
         dataSource={categories}

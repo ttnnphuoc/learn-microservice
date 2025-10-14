@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Typography, message, Card } from 'antd';
+import { Table, Typography, message, Card, Button, Space } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import type { Product } from '../types/Product';
 import { productService } from '../services/productService';
@@ -25,6 +26,10 @@ const ProductTable: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleAddProduct = () => {
+    message.info('Add Product functionality coming soon!');
   };
 
   const columns: ColumnsType<Product> = [
@@ -64,7 +69,16 @@ const ProductTable: React.FC = () => {
 
   return (
     <Card>
-      <Title level={2}>Products</Title>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <Title level={2} style={{ margin: 0 }}>Products</Title>
+        <Button 
+          type="primary" 
+          icon={<PlusOutlined />} 
+          onClick={handleAddProduct}
+        >
+          Add Product
+        </Button>
+      </div>
       <Table
         columns={columns}
         dataSource={products}
