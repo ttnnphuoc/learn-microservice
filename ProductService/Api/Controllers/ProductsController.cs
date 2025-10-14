@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
 using ProductService.Application.DTOs;
 using ProductService.Application.IServices;
 
 namespace ProductService.Api.Controllers;
-public class ProductsController
+[ApiController]
+[Route("api/[controller]")]
+public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
 
@@ -10,6 +13,7 @@ public class ProductsController
     {
         _productService = productService;
     }
+    [HttpGet("all")]
     public async Task<IEnumerable<ProductDto>> GetAllProducts()
     {
         return await _productService.GetAllProductsAsync();

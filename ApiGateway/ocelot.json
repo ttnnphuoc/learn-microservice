@@ -1,30 +1,12 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/order/{everything}",
+      "DownstreamPathTemplate": "/api/products/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        { "Host": "orderservice", "Port": 80 }
+        { "Host": "localhost", "Port": 5232 }
       ],
-      "UpstreamPathTemplate": "/order/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/product/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        { "Host": "productservice", "Port": 5232 }
-      ],
-      "UpstreamPathTemplate": "/product/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/customer/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        { "Host": "customerservice", "Port": 80 }
-      ],
-      "UpstreamPathTemplate": "/customer/{everything}",
+      "UpstreamPathTemplate": "/products/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
