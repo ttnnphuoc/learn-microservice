@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProductService.Infrastructure.Entity;
+namespace ProductService.Domain.Entities;
 
-public class Stock: BaseEntity
+[Table("Stocks")]
+public class Stock : BaseEntity
 {
     public int QuantityAvailable { get; set; }
     public int QuantityReserved { get; set; }

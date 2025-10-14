@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProductService.Infrastructure.Entity;
+namespace ProductService.Domain.Entities;
 
-public class Warehouse: BaseEntity
+[Table("Warehouses")]
+public class Warehouse : BaseEntity
 {
     public Guid LocationId { get; set; }
     [ForeignKey("LocationId")]

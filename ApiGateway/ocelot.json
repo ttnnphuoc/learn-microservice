@@ -13,7 +13,7 @@
       "DownstreamPathTemplate": "/api/product/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        { "Host": "productservice", "Port": 80 }
+        { "Host": "productservice", "Port": 5232 }
       ],
       "UpstreamPathTemplate": "/product/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]

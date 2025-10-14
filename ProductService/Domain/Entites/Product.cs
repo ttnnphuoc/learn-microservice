@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProductService.Infrastructure.Entity;
+namespace ProductService.Domain.Entities;
 
-public class Product: BaseEntity
+[Table("Products")]
+public class Product : BaseEntity
 {
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;

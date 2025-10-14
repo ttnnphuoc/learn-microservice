@@ -1,7 +1,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using ProductService.Infrastructure.Entity;
-namespace ProductService.Infrastructure.Data;
+using ProductService.Domain.Entities;
+
+namespace ProductService.Infrastructure;
         
 public class ProductDBContext(DbContextOptions<ProductDBContext> options) : DbContext(options)
 {
