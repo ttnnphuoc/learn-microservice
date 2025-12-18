@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Layout, Menu, theme } from 'antd';
-import { ProductOutlined, TagsOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { ProductOutlined, TagsOutlined, EnvironmentOutlined, ShoppingCartOutlined, PlusOutlined } from '@ant-design/icons';
 import ProductTable from './components/ProductTable';
 import CategoryTable from './components/CategoryTable';
 import LocationTable from './components/LocationTable';
+import { OrderTable } from './components/OrderTable';
+import { CreateOrderForm } from './components/CreateOrderForm';
 import './App.css'
 
 const { Header, Content, Sider } = Layout;
@@ -32,6 +34,16 @@ const AppContent: React.FC = () => {
       key: '/locations',
       icon: <EnvironmentOutlined />,
       label: 'Locations',
+    },
+    {
+      key: '/orders',
+      icon: <ShoppingCartOutlined />,
+      label: 'Orders',
+    },
+    {
+      key: '/create-order',
+      icon: <PlusOutlined />,
+      label: 'Create Order',
     },
   ];
 
@@ -69,7 +81,7 @@ const AppContent: React.FC = () => {
           background: colorBgContainer,
           borderBottom: '1px solid #f0f0f0'
         }}>
-          <h1 style={{ margin: 0, lineHeight: '64px' }}>Product Management System</h1>
+          <h1 style={{ margin: 0, lineHeight: '64px' }}>Microservices Management System</h1>
         </Header>
         <Content style={{ margin: 0, padding: 0 }}>
           <div
@@ -84,6 +96,8 @@ const AppContent: React.FC = () => {
               <Route path="/products" element={<ProductTable />} />
               <Route path="/categories" element={<CategoryTable />} />
               <Route path="/locations" element={<LocationTable />} />
+              <Route path="/orders" element={<OrderTable />} />
+              <Route path="/create-order" element={<CreateOrderForm />} />
             </Routes>
           </div>
         </Content>
